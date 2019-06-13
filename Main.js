@@ -40,12 +40,13 @@ function setSelectBox(){
 function listVedio(){
   selectItemIndex = VedioSelectBox.selectedIndex;
   // let vedio_Index = Math.floor((selectItemIndex+1)/3);
+  item_Index= selectItemIndex
   loadVedioById(selectItemIndex);
 }
 //display date
 // add vedio control
 function loadVedioById(item_Index){
-
+  alert(item_Index);
   vedioDate.innerHTML = parseNameToDate(files[item_Index*3].name);
   // load the three vedio
   for(var i=0;i<3;i++){
@@ -82,14 +83,17 @@ function playPause() {
 }
 function playNext()
 {
-  item_Index=item_Index+3
+  if (item_Index<((files.length/3)-1))
+  {
+      item_Index=item_Index+1
+  }
   loadVedioById(item_Index);
   showPlaySpeed();
 }
 function playPrev()
 {
-  if( item_Index>=3){
-    item_Index=item_Index-3
+  if( item_Index>0){
+    item_Index=item_Index-1
   }
   loadVedioById(item_Index);
   showPlaySpeed();
