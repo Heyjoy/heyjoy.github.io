@@ -46,7 +46,7 @@ function listVedio(){
 //display date
 // add vedio control
 function loadVedioById(item_Index){
-  alert(item_Index);
+  // alert(item_Index);
   vedioDate.innerHTML = parseNameToDate(files[item_Index*3].name);
   // load the three vedio
   for(var i=0;i<3;i++){
